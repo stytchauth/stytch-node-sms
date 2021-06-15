@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  font-family: "Josefin Sans", sans-serif;
+  height: 100vh;
+  text-align: center;
+}
+
+.nav {
+  align-items: center;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  height: 77px;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sublogo {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.navMenu {
+  margin-top: 20px;
+}
+
+.navItem {
+  font-size: 20px;
+  margin-right: 30px;
+}
+
+.content {
+  align-items: center;
+  background-image: url("/images/tropica-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.card {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  height: 415px;
+  justify-content: center;
+  width: 100%;
+}
+
+.cardContent {
+  text-align: center;
+}
+
+.contentHeader {
+  margin-top: -30px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 30px;
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  border: 1px solid #ADBCC5;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #19303D;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  height: 45px;
+  line-height: 25px;
+  padding: 10px;
+}
+
+input:disabled {
+  background-color: white;
+  color: #19303D;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.flag {
+  background: url('/images/stars-and-stripes.png') no-repeat scroll 7px 15px;
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+  width: 80px;
+  padding-left:50px;
+}
+
+#phone-number {
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+  margin-left: -5px;
+  width: 240px;
+}
+
+.passcodeInput {
+  border-radius: 10px;
+  font-size: 20px;
+  width: 48px;
+  height: 45px;
+  text-align: center;
+}
+
+.button {
+  background-color: #F96719;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  height: 45px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  padding-top: 12px;
+  width: 320px;
+}
+
+.button:hover {
+  background-color: #f06216;
+}
+
+.button:disabled {
+  background-color: #F9671940;
+  color: #ADBCC5;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.resend {
+  color: #5C727D;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.resend:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: 'Gloria Hallelujah';
+  font-size: 40px;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+}
