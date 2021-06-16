@@ -8,6 +8,4 @@ Run `node server.js`
 
 ##### 3. Login
 
-Visit `http://localhost:4567` and login with your email.
-Then check for the Stytch email and click the sign in button.
-You should be signed in!
+Visit `http://localhost:4567` and login by sms passcode!
