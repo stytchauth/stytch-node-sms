@@ -6,6 +6,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Gloria+Hallelujah&display=swap"
     rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="/loginOrSignUpUtils.js"></script>
 </head>
 <body>
   <div class="app">
@@ -27,18 +29,20 @@
           <p class="instructions">Please enter your phone number to place an order.</p>
           <form action="/login_or_create_user" method="POST">
             <div class="actions">
-              <div>
+              <div class="telInput">
                 <input class="flag" name="intlCode" type=text value="+1" readonly />
-                <input autofocus id="phone-number" name="phoneNumber" placeholder="(123) 456-7890"
+                <input autofocus id="phoneNumber" name="phoneNumber" placeholder="(123) 456-7890"
                   onkeyup="onPhoneNumberChange()" type="tel" />
               </div>
-              <input class="button" id="button" type="submit" value="SEND ME MAGIC NUMBER" />
+              <input class="button" id="button" type="submit" value="CONTINUE" />
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-  <script src="/loginOrSignUpUtils.js"></script>
+  <script>
+    document.getElementById('button').disabled = true;
+  </script>
 </body>
 </html>

@@ -6,6 +6,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Gloria+Hallelujah&display=swap"
     rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <script src="/authenticateUtils.js"></script>
 </head>
 <body>
@@ -28,8 +29,11 @@
           <p class="instructions">Just kidding. Check your phone for the 6-digit passcode.</p>
           <form action="/authenticate" method="POST">
             <div class="actions">
-              <div>
+              <p id="errorText">Invalid code. Please try again.</p>
+              <div class="passcodeInputContainer">
+                <!-- Hidden input to pass phoneId to req.body -->
                 <input type="hidden" name="phoneId" value="<%= phoneId %>" />
+
                 <input autofocus class="passcodeInput" type=text placeholder="0" size="1" maxlength="1"
                   name="digit-1" />
                 <input class="passcodeInput" type=text placeholder="0" size="1" maxlength="1" name="digit-2" />
@@ -38,7 +42,7 @@
                 <input class="passcodeInput" type=text placeholder="0" size="1" maxlength="1" name="digit-5" />
                 <input class="passcodeInput" type=text placeholder="0" size="1" maxlength="1" name="digit-6" />
               </div>
-              <input class="button" id="button" type="submit" value="I'M FEELING LUCKY" />
+              <input class="button" id="button" type="submit" value="LOG IN" />
             </div>
           </form>
         </div>
@@ -52,9 +56,11 @@
     for (i = 0; i < passcodeInputs.length; i++) {
       passcodeInputs[i].addEventListener('keyup', onPasscodeDigitEnter);
       if (hasErrored === "true") {
-        passcodeInputs[i].style.borderColor = 'red';
+        passcodeInputs[i].style.borderColor = '#AD2E30';
+        document.getElementById('errorText').style.visability = 'visible';
       } else {
         passcodeInputs[i].style.borderColor = '#ADBCC5';
+        document.getElementById('errorText').style.visibility = 'hidden';
       }
     }
   </script>

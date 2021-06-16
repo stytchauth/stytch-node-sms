@@ -46,6 +46,7 @@ function autoTab(target) {
 }
 
 function onPasscodeDigitEnter(e) {
+  document.getElementById('errorText').style.visibility = 'hidden';
   if (isValidPasscodeDigit(e.target.value) || e.target.value === '') {
     autoTab(e.target);
   }

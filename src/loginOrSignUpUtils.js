@@ -1,7 +1,7 @@
 function isValidNumber() {
   // Regex validates phone numbers in (xxx)xxx-xxxx, xxx-xxx-xxxx, xxxxxxxxxx, and xxx.xxx.xxxx format
   const regex = /^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/g;
-  const inputValue = document.getElementById(`phone-number`).value;
+  const inputValue = document.getElementById(`phoneNumber`).value;
   if (inputValue.match(regex)) {
     return true;
   }
@@ -24,5 +24,3 @@ function onPhoneNumberChange() {
     }
   }
 }
-
-document.getElementById('button').disabled = true;
