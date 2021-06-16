@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // defines the directory where the static assets are so images & css render correctly
 app.use(express.static('public'));
+// defines the directory where the js files are so that external js scripts can be added
+app.use(express.static('src'));
 // set app to use ejs so we can use html templates
 app.set('view engine', 'ejs');
 
@@ -37,7 +39,7 @@ app.post("/login_or_create_user", function (req, res) {
 
   client.loginOrCreateUserBySMS(params)
     .then(resp => {
-      res.render('authenticatePasscode', { phoneId: resp.phone_id, phoneNumber: phoneNumber, intlCode: req.body.intlCode, hasErrored: false });
+      res.render('authenticate', { phoneId: resp.phone_id, hasErrored: false });
     })
     .catch(err => {
       res.render('loginOrSignUp');
@@ -45,23 +47,22 @@ app.post("/login_or_create_user", function (req, res) {
 });
 
 app.post("/authenticate", function (req, res) {
-  let passcode = '';
+  let code = '';
   for (let i = 1; i <= 6; i++) {
-    passcode += req.body[`digit-${i}`];
+    code += req.body[`digit-${i}`];
   }
 
   const params = stytch.LoginOrCreateUserBySMSRequest = {
+    code,
     method_id: req.body.phoneId,
-    code: passcode,
   };
 
   client.authenticateOTP(params)
     .then(resp => {
       res.render('loggedIn');
-    })
-    .catch(err => {
+    }).catch(err => {
       console.log(err)
-      res.render('authenticatePasscode', { phoneId: req.body.phoneId, phoneNumber: req.body.phoneNumber, intlCode: req.body.intlCode, hasErrored: true });
+      res.render('authenticate', { phoneId: req.body.phoneId, hasErrored: true });
     });
 });
 

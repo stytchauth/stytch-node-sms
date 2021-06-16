@@ -103,6 +103,10 @@ input:focus {
   outline: 0;
 }
 
+::placeholder {
+  color: #E5E8EB;
+}
+
 .flag {
   background: url('/images/stars-and-stripes.png') no-repeat scroll 7px 15px;
   border-right: none;
