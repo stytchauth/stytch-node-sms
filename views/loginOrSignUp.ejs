@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tropica | Stytch example</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Gloria+Hallelujah&display=swap"
+    rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="/loginOrSignUpUtils.js"></script>
+</head>
+<body>
+  <div class="app">
+    <div class="nav">
+      <div class="logo">
+        <h1><a href="/">Tropica</a></h1>
+        <span class="navItem sublogo">Hawaiian Pizza & Lemonade</span>
+      </div>
+      <div class="navMenu">
+        <span class="navItem">About</span>
+        <span class="navItem">Menu</span>
+        <span class="navItem">Order</span>
+      </div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <div class="cardContent">
+          <h1 class="contentHeader">ALoha!</h1>
+          <p class="instructions">Please enter your phone number to place an order.</p>
+          <form action="/login_or_create_user" method="POST">
+            <div class="actions">
+              <div class="telInput">
+                <input class="flag" name="intlCode" type=text value="+1" readonly />
+                <input autofocus id="phoneNumber" name="phoneNumber" placeholder="(123) 456-7890"
+                  onkeyup="onPhoneNumberChange()" type="tel" />
+              </div>
+              <input class="button" id="button" type="submit" value="CONTINUE" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('button').disabled = true;
+  </script>
+</body>
+</html>
