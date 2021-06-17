@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const url = require('url');
-const stytch = require("stytch")
+const stytch = require("stytch");
 
 require('dotenv').config()
 
@@ -33,7 +33,9 @@ app.get("/", (req, res) => {
 
 app.post("/login_or_create_user", function (req, res) {
   const phoneNumber = req.body.phoneNumber.replace(/\D/g, '');
-  const params = stytch.LoginOrCreateUserBySMSRequest = {
+
+  // params are of type stytch.LoginOrCreateUserBySMSRequest
+  const params = {
     phone_number: `${req.body.intlCode}${phoneNumber}`,
   };
 
@@ -52,7 +54,8 @@ app.post("/authenticate", function (req, res) {
     code += req.body[`digit-${i}`];
   }
 
-  const params = stytch.LoginOrCreateUserBySMSRequest = {
+  // params are of type stytch.AuthenticateOTPRequest
+  const params = {
     code,
     method_id: req.body.phoneId,
   };
