@@ -1,5 +1,5 @@
 {
-  "name": "stytch-node-magic-links",
+  "name": "stytch-node-sms",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
