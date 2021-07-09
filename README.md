@@ -10,5 +10,6 @@ way, the SMS message will say "Tropica verification code: xxxxxx", matching the 
 
 1. Fill in `STYTCH_PROJECT_ID` and `STYTCH_SECRET` in the `.env` file. Get your credentials from
    your [Stytch dashboard](https://stytch.com/dashboard/api-keys).
-2. Run `npm start`
-3. Visit `http://localhost:4567` and login by SMS passcode!
+2. Run `npm install`
+3. Run `npm start`
+4. Visit `http://localhost:4567` and login by SMS passcode!
