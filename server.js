@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const url = require("url");
 const stytch = require("stytch");
 
 require("dotenv").config()
@@ -39,7 +38,7 @@ app.post("/login_or_create_user", function (req, res) {
     phone_number: `${req.body.intlCode}${phoneNumber}`,
   };
 
-  client.loginOrCreateUserBySMS(params)
+  client.otps.sms.loginOrCreate(params)
     .then(resp => {
       res.render('authenticate', { phoneId: resp.phone_id, hasErrored: false });
     })
@@ -60,7 +59,7 @@ app.post("/authenticate", function (req, res) {
     method_id: req.body.phoneId,
   };
 
-  client.authenticateOTP(params)
+  client.otps.authenticate(params)
     .then(resp => {
       res.render('loggedIn');
     }).catch(err => {
