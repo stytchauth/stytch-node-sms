@@ -25,7 +25,7 @@
     <div class="content">
       <div class="card">
         <div class="cardContent">
-          <h1 class="contentHeader">ALoha!</h1>
+          <h1 class="contentHeader">Aloha!</h1>
           <p class="instructions">Please enter your phone number to place an order.</p>
           <form action="/login_or_create_user" method="POST">
             <div class="actions">
@@ -33,6 +33,12 @@
                 <input class="flag" name="intlCode" type=text value="+1" readonly />
                 <input autofocus id="phoneNumber" name="phoneNumber" placeholder="(123) 456-7890"
                   onkeyup="onPhoneNumberChange()" type="tel" />
+              </div>
+              <div class="telType">
+                <input type="radio" name="telType" value="sms" id="sms" checked="checked">
+                <label for="sms">Text Me!</label>
+                <input type="radio" name="telType" value="whatsApp" id="whatsApp">
+                <label for="whatsApp">Send me a WhatsApp!</label>
               </div>
               <input class="button" id="button" type="submit" value="CONTINUE" />
             </div>
