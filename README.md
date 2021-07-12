@@ -1,13 +1,15 @@
 # stytch-node-sms
-##### 1. Set ENV vars
-Set your project ID and secret in the `.env` file. For continuity, you can create a new project called Tropica and use this project's project ID and secret. This way, when the sms passcode is sent the message will say `Tropica verification code: xxxxxx`
 
-##### 2. Run the Server
-```
-npm install
-node server.js
-```
+This example app uses the [Stytch API](https://stytch.com/docs/api) to send and authenticate
+one-time passcodes (OTPs).
 
-##### 3. Login
+## Running the app
 
-Visit `http://localhost:4567` and login by SMS passcode!
+For name continuity, create a new project called "Tropica" and use it for these setup steps. That
+way, the SMS message will say "Tropica verification code: xxxxxx", matching the app branding.
+
+1. Fill in `STYTCH_PROJECT_ID` and `STYTCH_SECRET` in the `.env` file. Get your credentials from
+   your [Stytch dashboard](https://stytch.com/dashboard/api-keys).
+2. Run `npm install`
+3. Run `npm start`
+4. Visit `http://localhost:4567` and login by SMS passcode!
