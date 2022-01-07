@@ -38,13 +38,23 @@ app.post("/login_or_create_user", function (req, res) {
     phone_number: `${req.body.intlCode}${phoneNumber}`,
   };
 
-  client.otps.sms.loginOrCreate(params)
-    .then(resp => {
-      res.render('authenticate', { phoneId: resp.phone_id, hasErrored: false });
-    })
-    .catch(err => {
-      res.render('loginOrSignUp');
-    });
+  if (req.body.telType === 'whatsApp') {
+    client.otps.whatsapp.loginOrCreate(params)
+      .then(resp => {
+        res.render('authenticate', { phoneId: resp.phone_id, hasErrored: false });
+      })
+      .catch(err => {
+        res.render('loginOrSignUp');
+      });
+  } else {
+    client.otps.sms.loginOrCreate(params)
+      .then(resp => {
+        res.render('authenticate', { phoneId: resp.phone_id, hasErrored: false });
+      })
+      .catch(err => {
+        res.render('loginOrSignUp');
+      });
+  }
 });
 
 app.post("/authenticate", function (req, res) {

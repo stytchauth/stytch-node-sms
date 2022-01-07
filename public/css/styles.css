@@ -123,6 +123,11 @@ input:focus {
   outline: 0;
 }
 
+input[type="radio"] {
+  vertical-align: middle;
+  margin-top: -3px;
+}
+
 ::placeholder {
   color: #E5E8EB;
 }
