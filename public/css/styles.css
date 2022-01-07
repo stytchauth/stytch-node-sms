@@ -125,6 +125,7 @@ input:focus {
 
 input[type="radio"] {
   vertical-align: middle;
+  margin-top: -3px;
 }
 
 ::placeholder {
