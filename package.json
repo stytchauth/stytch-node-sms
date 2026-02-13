@@ -20,7 +20,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "stytch": "^3.4.0"
+    "express": "^4.22.1",
+    "stytch": "^3.13.1"
   }
 }
